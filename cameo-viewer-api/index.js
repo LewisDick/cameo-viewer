@@ -10,7 +10,7 @@ function filterCameoShowtimes(showtime) {
     return showtime.CinemaId === CameoID;
 }
 server.register(cors, {});
-server.post('/movies', async (request, reply) => {
+server.get('/movies', async (request, reply) => {
     const json = await ky.post('https://www.picturehouses.com/api/scheduled-movies-ajax').json();
     return reply.send(json.movies
         .filter(m => isAvailableAtCameo(m))

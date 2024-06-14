@@ -16,7 +16,7 @@ function filterCameoShowtimes(showtime: Showtime): boolean {
 
 server.register(cors, {})
 
-server.post('/movies', async (request, reply): Promise<Movie[]> => {
+server.get('/movies', async (request, reply): Promise<Movie[]> => {
   const json: ScheduledMoviesResponse = await ky.post('https://www.picturehouses.com/api/scheduled-movies-ajax').json()
   return reply.send(json.movies
     .filter(m => isAvailableAtCameo(m))
