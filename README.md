@@ -1,5 +1,3 @@
-# Mantine Vite template
+# Cameo Viewer
 
-Get started with the template by clicking `Use this template` button on the top of the page.
-
-[Documentation](https://mantine.dev/guides/vite/)
+API & UI to view all movies scheduled to show at the Cameo cinema
